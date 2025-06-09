@@ -7,7 +7,11 @@ const prev = document.querySelector('.botao-prev');
 const next = document.querySelector('.botao-next');
 const audio = document.getElementById("audioPlayer");
 
-
+// Toca o áudio assim que a página é carregada
+window.addEventListener('load', () => {
+    audio.volume = 0.1;
+    audio.play();
+});
 
 let searchPokemon = 1;
 
@@ -63,15 +67,4 @@ next.addEventListener('click', () => {
 });
 
 // Referência ao elemento de áudio
-
-
-// Reproduz o áudio automaticamente ao carregar a página
-next.addEventListener('click', function() { 
-audio.play()
-audio.volume = 0.1;
-
-});
-
-
-
 renderPokemon(searchPokemon);
